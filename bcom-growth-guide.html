@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BcomWale — YouTube Growth Roadmap</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #FF3B3B;
+    --orange: #FF7043;
+    --yellow: #FFB300;
+    --green: #00C853;
+    --blue: #2979FF;
+    --purple: #7C4DFF;
+    --bg: #0D0D0D;
+    --card: #161616;
+    --card2: #1E1E1E;
+    --border: rgba(255,255,255,0.07);
+    --text: #F0F0F0;
+    --muted: #888;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Hind', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #1a0000 0%, #0D0D0D 50%, #000d1a 100%);
+    padding: 48px 24px 40px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%; transform: translateX(-50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255,59,59,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .yt-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,59,59,0.15);
+    border: 1px solid rgba(255,59,59,0.3);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--red);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .yt-badge svg { width: 14px; height: 14px; }
+
+  h1 {
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(28px, 7vw, 44px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #fff 0%, #ccc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 420px;
+    margin: 0 auto 28px;
+  }
+
+  .status-bar {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .stat-pill {
+    background: var(--card2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .stat-pill .num {
+    font-family: 'Baloo 2', cursive;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .stat-pill .label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+  }
+
+  .stat-pill.green .num { color: var(--green); }
+  .stat-pill.yellow .num { color: var(--yellow); }
+  .stat-pill.orange .num { color: var(--orange); }
+
+  /* Progress bar */
+  .progress-section {
+    padding: 28px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .progress-label span:first-child {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .progress-label span:last-child {
+    font-size: 13px;
+    color: var(--yellow);
+    font-weight: 600;
+  }
+
+  .progress-bar {
+    height: 12px;
+    background: var(--card2);
+    border-radius: 100px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .progress-fill {
+    height: 100%;
+    width: 57.75%;
+    background: linear-gradient(90deg, var(--yellow), var(--orange));
+    border-radius: 100px;
+    position: relative;
+    animation: fillUp 1.5s ease-out forwards;
+  }
+
+  @keyframes fillUp {
+    from { width: 0; }
+    to { width: 57.75%; }
+  }
+
+  .progress-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .progress-note strong { color: var(--green); }
+
+  /* Main content */
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 16px 60px;
+  }
+
+  /* Section headers */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 36px 0 16px;
+  }
+
+  .section-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  /* Alert box */
+  .alert {
+    background: rgba(255,59,59,0.08);
+    border: 1px solid rgba(255,59,59,0.25);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-bottom: 20px;
+  }
+
+  .alert-title {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    color: var(--red);
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .alert p { font-size: 14px; color: #ddd; line-height: 1.6; }
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 12px;
+  }
+
+  .card-title {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card p { font-size: 14px; color: #ccc; }
+
+  /* Checklist */
+  .checklist { list-style: none; }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .check-box {
+    width: 22px; height: 22px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .check-box:hover { border-color: var(--green); }
+  .check-box.done { background: var(--green); border-color: var(--green); }
+  .check-box.done::after { content: '✓'; color: white; font-size: 13px; font-weight: 700; }
+
+  .check-text { flex: 1; }
+  .check-text strong { display: block; color: #fff; margin-bottom: 2px; }
+  .check-text span { color: var(--muted); font-size: 13px; }
+
+  /* Priority tag */
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 100px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .tag.urgent { background: rgba(255,59,59,0.2); color: var(--red); }
+  .tag.soon { background: rgba(255,179,0,0.2); color: var(--yellow); }
+  .tag.later { background: rgba(41,121,255,0.2); color: var(--blue); }
+
+  /* Video pillars */
+  .pillars { display: flex; flex-direction: column; gap: 12px; }
+
+  .pillar {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 18px;
+    border-left: 4px solid transparent;
+  }
+
+  .pillar.p1 { border-color: var(--green); }
+  .pillar.p2 { border-color: var(--yellow); }
+  .pillar.p3 { border-color: var(--blue); }
+
+  .pillar-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+
+  .pillar-name {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .pillar-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .p1 .pillar-badge { background: rgba(0,200,83,0.15); color: var(--green); }
+  .p2 .pillar-badge { background: rgba(255,179,0,0.15); color: var(--yellow); }
+  .p3 .pillar-badge { background: rgba(41,121,255,0.15); color: var(--blue); }
+
+  .pillar p { font-size: 13px; color: #bbb; margin-bottom: 10px; }
+
+  .examples { display: flex; flex-direction: column; gap: 5px; }
+
+  .example {
+    background: var(--card2);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: #ddd;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .example::before { content: '▶'; font-size: 10px; color: var(--muted); margin-top: 3px; flex-shrink: 0; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 24px; }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--yellow), var(--green), var(--blue));
+    border-radius: 2px;
+  }
+
+  .tl-item {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .tl-dot {
+    position: absolute;
+    left: -20px;
+    top: 4px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--bg);
+  }
+
+  .tl-item:nth-child(1) .tl-dot { background: var(--yellow); }
+  .tl-item:nth-child(2) .tl-dot { background: var(--orange); }
+  .tl-item:nth-child(3) .tl-dot { background: var(--green); }
+  .tl-item:nth-child(4) .tl-dot { background: var(--blue); }
+  .tl-item:nth-child(5) .tl-dot { background: var(--purple); }
+
+  .tl-time {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .tl-title {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .tl-desc { font-size: 13px; color: #bbb; }
+
+  /* Money section */
+  .money-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .money-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .money-card .amount {
+    font-family: 'Baloo 2', cursive;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+
+  .money-card .source { font-size: 12px; color: var(--muted); }
+
+  /* Tips */
+  .tip-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .tip {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 14px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .tip-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+  .tip-content strong { display: block; color: #fff; margin-bottom: 3px; font-size: 14px; }
+  .tip-content span { color: #aaa; font-size: 13px; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 32px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .footer strong { color: var(--text); }
+
+  .idea-check { cursor: pointer; }
+  .idea-check.done { background: var(--blue); border-color: var(--blue); }
+
+
+    height: 1px;
+    background: var(--border);
+    margin: 8px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="yt-badge">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+    BcomWale YouTube Roadmap
+  </div>
+  <h1>तेरा YouTube<br>Career Plan 🎯</h1>
+  <p class="hero-sub">A complete step-by-step guide to grow your channel, hit monetization, and start earning — made just for you.</p>
+
+  <div class="status-bar">
+    <div class="stat-pill green">
+      <div class="num">1,550</div>
+      <div class="label">Subscribers ✅</div>
+    </div>
+    <div class="stat-pill yellow">
+      <div class="num">2,310</div>
+      <div class="label">Watch Hours</div>
+    </div>
+    <div class="stat-pill orange">
+      <div class="num">674</div>
+      <div class="label">Videos Made</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-section">
+  <div class="progress-label">
+    <span>⏱ Watch Hours Progress</span>
+    <span>2,310 / 4,000 hrs</span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+  <p class="progress-note">You need <strong>1,690 more hours</strong> — you can hit this in 6–8 weeks with the right content!</p>
+</div>
+
+<div class="container">
+
+  <!-- PROBLEM -->
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(255,59,59,0.15)">🚨</div>
+    <div class="section-title">The Problem Right Now</div>
+  </div>
+
+  <div class="alert">
+    <div class="alert-title">Why the channel isn't growing yet</div>
+    <p>Most videos are about <strong>results & datesheets</strong> — these are short (2–3 min) and viewers leave after checking their result. YouTube algorithm needs <strong>long watch time</strong> to recommend your videos to new people. You've posted 674 videos but avg views are only 87 — that means YouTube isn't showing your videos to anyone new.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">✅ Good news</div>
+    <p>Subscribers ✅ already crossed 1,500. Watch hours ✅ are more than halfway there. You have a good setup and you're consistent. You just need to change <strong>what</strong> you make — not how hard you work.</p>
+  </div>
+
+  <!-- CONTENT STRATEGY -->
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(0,200,83,0.15)">🎬</div>
+    <div class="section-title">New Content Strategy — 3 Types of Videos</div>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar p1">
+      <div class="pillar-head">
+        <div class="pillar-name">📚 Type 1 — Concept Videos</div>
+        <div class="pillar-badge">⭐ MAIN FOCUS</div>
+      </div>
+      <p>These are your <strong>biggest money-makers</strong>. 15–20 min long. Students watch these fully before exams = huge watch time for you.</p>
+      <div class="examples">
+        <div class="example">Partnership Accounts समझो 20 Minutes में — B.Com 1st Year</div>
+        <div class="example">Depreciation Methods Easy Explanation with Examples</div>
+        <div class="example">Business Law के Important Topics — PU Syllabus</div>
+      </div>
+    </div>
+
+    <div class="pillar p2">
+      <div class="pillar-head">
+        <div class="pillar-name">📝 Type 2 — Exam Prep Videos</div>
+        <div class="pillar-badge">HIGH DEMAND</div>
+      </div>
+      <p>Students search these urgently before exams. 10–15 min. Very high views during exam season.</p>
+      <div class="examples">
+        <div class="example">B.Com 1st Sem Important Questions 2026 Punjab University</div>
+        <div class="example">Last Minute Revision — Accounts B.Com 2nd Year</div>
+        <div class="example">B.Com Paper Pattern — What Will Come in Exam?</div>
+      </div>
+    </div>
+
+    <div class="pillar p3">
+      <div class="pillar-head">
+        <div class="pillar-name">📢 Type 3 — News/Updates</div>
+        <div class="pillar-badge">KEEP SHORT</div>
+      </div>
+      <p>Results, datesheets — keep making these but <strong>max 1–2 per week</strong>. They bring traffic spikes but not regular subscribers.</p>
+      <div class="examples">
+        <div class="example">B.Com Result Out — Direct Link to Check</div>
+        <div class="example">Datesheet Released — Important Dates</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEKLY PLAN -->
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(255,179,0,0.15)">📅</div>
+    <div class="section-title">Weekly Posting Schedule</div>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background:var(--card2);border-radius:10px">
+        <span style="font-size:14px">Mon / Wed / Fri</span>
+        <span style="color:var(--green);font-weight:700;font-size:13px">📚 Concept Video (15–20 min)</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background:var(--card2);border-radius:10px">
+        <span style="font-size:14px">Tuesday / Thursday</span>
+        <span style="color:var(--yellow);font-weight:700;font-size:13px">📝 Exam Prep Video (10–15 min)</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;background:var(--card2);border-radius:10px">
+        <span style="font-size:14px">When needed</span>
+        <span style="color:var(--blue);font-weight:700;font-size:13px">📢 News/Results (3–5 min max)</span>
+      </div>
+    </div>
+    <p style="margin-top:12px;font-size:13px;color:var(--muted)">This gives 5 videos/week with long watch time instead of 7 short news videos. Quality over quantity.</p>
+  </div>
+
+  <!-- THIS WEEK CHECKLIST -->
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(124,77,255,0.15)">✅</div>
+    <div class="section-title">Do These This Week</div>
+  </div>
+
+  <div class="card">
+    <ul class="checklist" id="checklist">
+      <li>
+        <div class="check-box" onclick="toggle(this)"></div>
+        <div class="check-text">
+          <strong>Set Channel Country to India <span class="tag urgent">Do Today</span></strong>
+          <span>Go to YouTube Studio → Settings → Channel → Basic Info → Country → India</span>
+        </div>
+      </li>
+      <li>
+        <div class="check-box" onclick="toggle(this)"></div>
+        <div class="check-text">
+          <strong>Update Channel Description <span class="tag urgent">Do Today</span></strong>
+          <span>Write clearly: "Punjab University B.Com students ke liye — concepts, exam prep, results. Subscribe karein!"</span>
+        </div>
+      </li>
+      <li>
+        <div class="check-box" onclick="toggle(this)"></div>
+        <div class="check-text">
+          <strong>Pick Your First Concept Video Topic <span class="tag urgent">This Week</span></strong>
+          <span>Choose any chapter from B.Com 1st or 2nd year that students find hard. Script it simply.</span>
+        </div>
+      </li>
+      <li>
+        <div class="check-box" onclick="toggle(this)"></div>
+        <div class="check-text">
+          <strong>Fix Thumbnail Style <span class="tag soon">This Week</span></strong>
+          <span>Use big bold Hindi/Punjabi text + your face in thumbnail. Pick one color scheme and use it for every video.</span>
+        </div>
+      </li>
+      <li>
+        <div class="check-box" onclick="toggle(this)"></div>
+        <div class="check-text">
+          <strong>Add End Screen to Old Popular Videos <span class="tag soon">This Week</span></strong>
+          <span>Add "Subscribe" button + next video card to your top 10 videos. Free extra subscribers.</span>
+        </div>
+      </li>
+      <li>
+        <div class="check-box" onclick="toggle(this)"></div>
+        <div class="check-text">
+          <strong>Create a Telegram Channel <span class="tag later">Next Week</span></strong>
+          <span>Where students can join your community. Share notes, updates, links. Builds loyal audience fast.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- THUMBNAIL TIPS -->
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(255,112,67,0.15)">🖼️</div>
+    <div class="section-title">Thumbnail Rules (Very Important)</div>
+  </div>
+
+  <div class="tip-list">
+    <div class="tip">
+      <div class="tip-icon">👤</div>
+      <div class="tip-content">
+        <strong>Show your face</strong>
+        <span>Channels with creator's face in thumbnail get 40–60% more clicks. Students trust a real person.</span>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">✍️</div>
+      <div class="tip-content">
+        <strong>Big bold Hindi text</strong>
+        <span>Write the topic in large text like "आसान भाषा में" or "समझो 20 Min में" — students immediately know what the video is about.</span>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">🎨</div>
+      <div class="tip-content">
+        <strong>Same color scheme every time</strong>
+        <span>Pick 2 colors (e.g. red + white or yellow + dark blue). Use them on every thumbnail so your videos look like a series.</span>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">😮</div>
+      <div class="tip-content">
+        <strong>Emotion matters</strong>
+        <span>Show a curious or confident expression — not blank face. Viewers click on emotion, not just information.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONETIZATION TIMELINE -->
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(0,200,83,0.15)">💰</div>
+    <div class="section-title">Monetization Timeline</div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">4–6 Weeks from now</div>
+      <div class="tl-title">🎉 Hit 4,000 Watch Hours</div>
+      <div class="tl-desc">Post 3 long concept videos per week → easily adds 100+ watch hours per video. You only need ~1,690 more hours.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">~6 Weeks</div>
+      <div class="tl-title">✅ YouTube Partner Program Approved</div>
+      <div class="tl-desc">Apply as soon as both conditions are met. Usually approved in 1–2 weeks. Ads will start showing on your videos.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">Month 3–4</div>
+      <div class="tl-title">💸 First AdSense Payout</div>
+      <div class="tl-desc">YouTube pays when balance crosses ₹8,000. Education content in India gets ₹80–150 per 1,000 views (RPM).</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">Month 6</div>
+      <div class="tl-title">📦 Add Extra Income Streams</div>
+      <div class="tl-desc">Start selling PDF notes on Telegram, partner with ed-tech brands, promote relevant apps.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">Month 12–18</div>
+      <div class="tl-title">🚀 ₹15,000–25,000/month</div>
+      <div class="tl-desc">Realistic stable income from AdSense + notes + sponsorships combined with a 5K–10K subscriber channel.</div>
+    </div>
+  </div>
+
+  <!-- INCOME STREAMS -->
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(0,200,83,0.15)">🏦</div>
+    <div class="section-title">Income Sources (Beyond AdSense)</div>
+  </div>
+
+  <div class="money-grid">
+    <div class="money-card">
+      <div class="amount">₹3–8K</div>
+      <div class="source">📺 YouTube AdSense<br><span style="font-size:11px">per month at 5K subs</span></div>
+    </div>
+    <div class="money-card">
+      <div class="amount">₹5–10K</div>
+      <div class="source">📄 PDF Notes Sales<br><span style="font-size:11px">via Telegram/Gumroad</span></div>
+    </div>
+    <div class="money-card">
+      <div class="amount">₹5–15K</div>
+      <div class="source">🤝 Sponsorships<br><span style="font-size:11px">ed-tech apps & brands</span></div>
+    </div>
+    <div class="money-card">
+      <div class="amount">₹2–5K</div>
+      <div class="source">💬 Telegram Channel<br><span style="font-size:11px">paid membership later</span></div>
+    </div>
+  </div>
+
+  <!-- GOLDEN RULES -->
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(255,179,0,0.15)">⭐</div>
+    <div class="section-title">5 Golden Rules to Remember</div>
+  </div>
+
+  <div class="tip-list">
+    <div class="tip">
+      <div class="tip-icon">📏</div>
+      <div class="tip-content">
+        <strong>Longer videos = more money</strong>
+        <span>A 20-minute concept video earns 10x more watch time (and AdSense) than a 2-minute result video.</span>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">🔁</div>
+      <div class="tip-content">
+        <strong>End every video with a hook</strong>
+        <span>Say: "Subscribe karo — agli video mein [next topic] padhaenge." Give them a reason to come back.</span>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">🔍</div>
+      <div class="tip-content">
+        <strong>Title must have keywords students search</strong>
+        <span>Write titles like "B.Com 2nd Year Accounts — Chapter 3 Full Explanation Punjab University 2026"</span>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">🗓️</div>
+      <div class="tip-content">
+        <strong>Consistency beats perfection</strong>
+        <span>3 good videos per week, every week, is better than 1 perfect video per month.</span>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">💬</div>
+      <div class="tip-content">
+        <strong>Reply to every comment in first month</strong>
+        <span>YouTube boosts channels with high comment engagement. Even a short reply counts.</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- SHORTS STRATEGY -->
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(255,59,59,0.15)">⚡</div>
+    <div class="section-title">Shorts — Free Growth Hack</div>
+  </div>
+
+  <div class="alert" style="background:rgba(0,200,83,0.07);border-color:rgba(0,200,83,0.25)">
+    <div class="alert-title" style="color:var(--green)">You're not using Shorts at all — big missed opportunity</div>
+    <p>A 60-second "one concept explained" Short can get <strong>10,000–50,000 views</strong> in the education niche easily. It pushes new people to your main channel without any extra effort.</p>
+  </div>
+
+  <div class="tip-list">
+    <div class="tip">
+      <div class="tip-icon">✂️</div>
+      <div class="tip-content">
+        <strong>Cut 1 minute from every long video</strong>
+        <span>Just take the best explanation moment from your concept video and post it as a Short the same day. Zero extra work.</span>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">🎯</div>
+      <div class="tip-content">
+        <strong>Short title formula</strong>
+        <span>"Did you know this about [topic]? 🤯 #bcom #punjabuniversity" — curiosity + hashtags = views</span>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">📌</div>
+      <div class="tip-content">
+        <strong>Pin comment on every Short</strong>
+        <span>"Full video link in bio 👆" — drives viewers from Shorts to your main long videos for watch time.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 30 VIDEO IDEAS -->
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(41,121,255,0.15)">💡</div>
+    <div class="section-title">30 Video Ideas — Ready to Use</div>
+  </div>
+
+  <div class="card" style="margin-bottom:12px">
+    <p style="font-size:13px;color:var(--muted)">Tick off each idea as you make the video. Progress saves automatically. <span id="idea-count" style="color:var(--yellow);font-weight:600">0 / 50 done</span></p>
+  </div>
+
+  <!-- Group 1 -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="card-title" style="color:var(--green)">📚 Concept Videos (B.Com 1st Year)</div>
+    <ul class="checklist">
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Partnership Accounts — Complete Chapter समझो</strong><span>B.Com 1st Year | Punjab University</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Business Organisation क्या होती है? — Easy Explanation</strong><span>Sole trader vs partnership vs company</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Business Communication — Types & Importance</strong><span>B.Com 1st Sem full chapter</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Fundamentals of Accounting — Basics for Beginners</strong><span>Perfect for students new to accounts</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Trial Balance क्या है और कैसे बनाएं?</strong><span>Step by step with solved example</span></div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Group 2 -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="card-title" style="color:var(--yellow)">📚 Concept Videos (B.Com 2nd & 3rd Year)</div>
+    <ul class="checklist">
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Depreciation — SLM vs WDV Method Explained</strong><span>With numerical examples | B.Com 2nd Year</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Company Final Accounts — Full Chapter</strong><span>Trading + P&L + Balance Sheet</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Ratio Analysis — All Ratios एक Video में</strong><span>Liquidity, profitability, solvency ratios</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Cash Flow Statement — Step by Step</strong><span>Operating + investing + financing activities</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Income Tax Basics — B.Com 3rd Year</strong><span>Heads of income, deductions u/s 80C explained simply</span></div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Group 3 -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="card-title" style="color:var(--orange)">📝 Exam Prep Videos</div>
+    <ul class="checklist">
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>B.Com 1st Sem Important Questions 2026 — PU</strong><span>Most likely to come in paper</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>B.Com Accounts Paper Pattern — What to Expect</strong><span>Marks distribution + question types</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Last Minute Revision — Business Law B.Com</strong><span>Top 20 definitions + important sections</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>How to Write Answers in B.Com Exam — Tips</strong><span>Format, word limit, marks trick</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>B.Com 3rd Year Important Topics — Don't Miss These</strong><span>Before final exams</span></div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Group 4 -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="card-title" style="color:var(--blue)">🎯 Career & Motivation Videos</div>
+    <ul class="checklist">
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>B.Com ke baad kya karein? — Honest Guide</strong><span>CA, MBA, Govt Jobs, Private — all options</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>CA vs MBA vs CMA — Konsa Better Hai?</strong><span>Salary, difficulty, time — full comparison</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>B.Com Student ke liye Best Side Income Ideas</strong><span>Freelancing, tutoring, online earning</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>How to Get Good Marks in B.Com — Study Strategy</strong><span>Topper's routine + tips</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Punjab University B.Com — Complete Syllabus Tour</strong><span>Semester wise subjects explained</span></div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Group 5 -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="card-title" style="color:var(--purple)">⚡ YouTube Shorts Ideas (60 sec)</div>
+    <ul class="checklist">
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>"Depreciation kya hota hai?" — 60 Second Explanation</strong><span>Short format, curiosity hook</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>B.Com vs BA vs BSc — 1 Minute Comparison</strong><span>High search + shareable</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Exam mein ye galti mat karna — Quick Tip</strong><span>Relatable content = high shares</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Result check karne ka sabse fast tarika</strong><span>Trending during result season</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>B.Com 1st Year mein ye subjects hote hain 👀</strong><span>Curiosity + new student audience</span></div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Group 6 -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="card-title" style="color:var(--red)">🔥 High Search Volume — Don't Miss</div>
+    <ul class="checklist">
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Punjab University Revaluation Process — Full Guide</strong><span>Students search this every semester</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>B.Com Admit Card kaise download karein — Step by Step</strong><span>High views every exam cycle</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>PU Migration Certificate kaise milega?</strong><span>Very searched, almost no good videos exist</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>B.Com Compartment Exam — All You Need to Know</strong><span>Students who failed search this urgently</span></div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text"><strong>Punjab University Official Website — How to Use</strong><span>Evergreen guide for new students</span></div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Group 7 — LONG VIDEOS -->
+  <div class="card" style="margin-bottom:12px;border-color:rgba(0,200,83,0.2)">
+    <div class="card-title" style="color:var(--green)">🎥 Long Videos (30–60 min) — Maximum Watch Time</div>
+    <div style="background:rgba(0,200,83,0.07);border-radius:10px;padding:10px 12px;margin-bottom:14px">
+      <p style="font-size:13px;color:#aaa;">These are your <strong style="color:var(--green)">biggest watch hour earners</strong>. One 45-min video watched fully = 45 watch hours if 60 people watch it. Post 1 per week on Sunday.</p>
+    </div>
+    <ul class="checklist">
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>B.Com 1st Year Accounts — Complete Chapter Marathon 🔴 LIVE</strong>
+          <span>45–60 min | Cover entire 1st year accounts syllabus in one video. Students will save & rewatch this before exams.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>Partnership Accounts — Full Chapter with 10 Solved Numericals</strong>
+          <span>40–50 min | Theory + every type of numerical. Best video she can make for watch time.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>B.Com 2nd Year Accounts — Complete Revision in One Video</strong>
+          <span>50–60 min | Pre-exam marathon. Students will watch the entire thing the night before.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>Business Law — All Important Sections Explained (Full Video)</strong>
+          <span>45 min | Contract Act, Sale of Goods Act, Partnership Act — all in one place.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>Income Tax Full Chapter — B.Com 3rd Year Complete</strong>
+          <span>50–60 min | Heads of income + deductions + numericals. Very few good Hindi videos exist on this.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>Company Accounts — Complete Chapter with Solved Examples</strong>
+          <span>45 min | Issue of shares, debentures, final accounts — all types covered.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>B.Com 1st Semester — Complete Exam Preparation in 1 Video</strong>
+          <span>60 min | All subjects, important topics, expected questions. Post 2 weeks before every exam.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>Cost Accounting — Full Introduction + Numericals</strong>
+          <span>40 min | Students struggle with this — a clear Hindi explanation will rank easily.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>Auditing — Complete Chapter B.Com 3rd Year</strong>
+          <span>35–40 min | Theory heavy but very searched. No good Hindi videos exist on PU syllabus.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>B.Com 3rd Year — Full Syllabus Roadmap + Strategy Video</strong>
+          <span>30–35 min | What to study, what to skip, how to pass. Students love this before semester starts.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card" style="margin-bottom:12px;background:rgba(255,179,0,0.05);border-color:rgba(255,179,0,0.2)">
+    <div class="card-title" style="color:var(--yellow)">💡 Why Long Videos Work So Well</div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+      <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px">
+        <span style="color:var(--yellow);font-size:16px;flex-shrink:0">⏱</span>
+        <span style="color:#ccc"><strong style="color:#fff">Watch time is currency.</strong> A 45-min video watched fully earns 45× more watch hours than a 1-min Short. This is the fastest path to 4,000 hours.</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px">
+        <span style="color:var(--yellow);font-size:16px;flex-shrink:0">🔖</span>
+        <span style="color:#ccc"><strong style="color:#fff">Students save long videos.</strong> They bookmark "full chapter" videos in their Watch Later list and rewatch them — giving you multiple watch sessions per viewer.</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px">
+        <span style="color:var(--yellow);font-size:16px;flex-shrink:0">📈</span>
+        <span style="color:#ccc"><strong style="color:#fff">Algorithm loves them.</strong> YouTube actively promotes long videos with high average view duration. One viral long video can bring 1,000+ subscribers.</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px">
+        <span style="color:var(--yellow);font-size:16px;flex-shrink:0">🏷️</span>
+        <span style="color:#ccc"><strong style="color:#fff">Title formula that works:</strong> "[Subject] — Complete Chapter | B.Com [Year] Year | Punjab University 2026"</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIRALITY SECTION -->
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(255,59,59,0.15)">🔥</div>
+    <div class="section-title">Virality — How to Make Videos Blow Up</div>
+  </div>
+
+  <div class="alert" style="background:rgba(255,112,67,0.07);border-color:rgba(255,112,67,0.3)">
+    <div class="alert-title" style="color:var(--orange)">Viral nahi hona lucky nahi hota — it's a formula</div>
+    <p>Every video that blows up has specific ingredients. You can engineer these on purpose. Here's exactly what works in the education niche on YouTube India.</p>
+  </div>
+
+  <!-- Viral Triggers -->
+  <div class="card" style="margin-bottom:12px;border-color:rgba(255,112,67,0.2)">
+    <div class="card-title" style="color:var(--orange)">⚡ The 5 Virality Triggers</div>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:6px">
+
+      <div style="background:var(--card2);border-radius:12px;padding:14px">
+        <div style="font-family:'Baloo 2',cursive;font-weight:700;font-size:15px;margin-bottom:5px">1. 🎯 Emotion in the Thumbnail</div>
+        <p style="font-size:13px;color:#bbb;">Shock, curiosity, or urgency makes people click. Instead of a plain face, show a <strong style="color:#fff">surprised or "wait what?" expression</strong> with text like "यह कोई नहीं बताता 👀" or "Result आ गया 😱"</p>
+      </div>
+
+      <div style="background:var(--card2);border-radius:12px;padding:14px">
+        <div style="font-family:'Baloo 2',cursive;font-weight:700;font-size:15px;margin-bottom:5px">2. 🪝 The First 30 Seconds Hook</div>
+        <p style="font-size:13px;color:#bbb;">If viewers don't stay past 30 seconds, YouTube stops recommending the video. Start with: <strong style="color:#fff">"Aaj main tumhe woh cheez bataunga jo 90% students nahi jaante…"</strong> — never start with "Namaste, aaj ke video mein hum dekhenge..."</p>
+      </div>
+
+      <div style="background:var(--card2);border-radius:12px;padding:14px">
+        <div style="font-family:'Baloo 2',cursive;font-weight:700;font-size:15px;margin-bottom:5px">3. 📣 Shareability</div>
+        <p style="font-size:13px;color:#bbb;">Videos get shared when they're <strong style="color:#fff">relatable or solve an urgent problem</strong>. "B.Com mein fail hone ke 5 reasons" will be shared in every B.Com WhatsApp group in PU. Think: "Would I share this in my class group?"</p>
+      </div>
+
+      <div style="background:var(--card2);border-radius:12px;padding:14px">
+        <div style="font-family:'Baloo 2',cursive;font-weight:700;font-size:15px;margin-bottom:5px">4. 📅 Timing</div>
+        <p style="font-size:13px;color:#bbb;">Post <strong style="color:#fff">exam prep videos 3 weeks before exams</strong>, result videos the day results are expected, and datesheet videos the day it's announced. Timing = 10x the views for the same video.</p>
+      </div>
+
+      <div style="background:var(--card2);border-radius:12px;padding:14px">
+        <div style="font-family:'Baloo 2',cursive;font-weight:700;font-size:15px;margin-bottom:5px">5. 💬 Comment Bait (Ethical)</div>
+        <p style="font-size:13px;color:#bbb;">End every video with a question: <strong style="color:#fff">"Comment mein batao — tumhara sabse mushkil subject kaun sa hai?"</strong> Comments signal the algorithm that your video is engaging. More comments = more reach.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Viral Title Formulas -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="card-title" style="color:var(--yellow)">✍️ Viral Title Formulas That Work</div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+      <div style="background:var(--card2);border-radius:10px;padding:10px 14px">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">SECRET / WHAT NOBODY TELLS YOU</div>
+        <div style="font-size:14px;color:#fff">"B.Com mein pass hone ka woh secret jo teachers nahi batate 🤫"</div>
+      </div>
+      <div style="background:var(--card2);border-radius:10px;padding:10px 14px">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">MISTAKE / WARNING</div>
+        <div style="font-size:14px;color:#fff">"B.Com 1st Year mein ye 5 galtiyan mat karna — Result kharab ho jayega"</div>
+      </div>
+      <div style="background:var(--card2);border-radius:10px;padding:10px 14px">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">SPEED / SHORTCUT</div>
+        <div style="font-size:14px;color:#fff">"Accounts ka pura chapter sirf 20 minutes mein — Guaranteed Samajh Aayega"</div>
+      </div>
+      <div style="background:var(--card2);border-radius:10px;padding:10px 14px">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">RANKING / LIST</div>
+        <div style="font-size:14px;color:#fff">"B.Com ke baad Top 7 Career Options — Salary ke saath"</div>
+      </div>
+      <div style="background:var(--card2);border-radius:10px;padding:10px 14px">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">URGENCY</div>
+        <div style="font-size:14px;color:#fff">"Exam se pehle yeh video zaroor dekho — Important Questions 2026"</div>
+      </div>
+      <div style="background:var(--card2);border-radius:10px;padding:10px 14px">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px">HONEST / REAL TALK</div>
+        <div style="font-size:14px;color:#fff">"Sach bolun? B.Com worth it hai ya nahi — Honest Review"</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Viral Video Ideas -->
+  <div class="card" style="margin-bottom:12px;border-color:rgba(255,59,59,0.2)">
+    <div class="card-title" style="color:var(--red)">🚀 10 Viral Video Ideas — High Shareability</div>
+    <div style="background:rgba(255,59,59,0.06);border-radius:10px;padding:10px 12px;margin-bottom:14px">
+      <p style="font-size:13px;color:#aaa;">These are designed to be <strong style="color:#fff">shared in WhatsApp groups and class chats</strong> — that's how education videos go viral in India.</p>
+    </div>
+    <ul class="checklist">
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>"B.Com mein Fail hone ke 5 Reasons — Honest Video"</strong>
+          <span>Relatable + shareable. Every student will tag their friend. 🔥 High viral potential.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>"Punjab University Result Kab Aayega? — Latest Update 2026"</strong>
+          <span>Post this exactly when students are anxiously waiting. Will blow up in hours.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>"B.Com vs BBA vs BA — Konsa Choose Karein? Honest Comparison"</strong>
+          <span>Every class 12th student asks this. Massive search volume + shareable to juniors.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>"Teacher ne Jo Nahi Bataya — Accounts Exam Trick"</strong>
+          <span>"Secret knowledge" framing always gets clicks and shares.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>"Meri B.Com Journey — Struggles, Fails aur Lessons"</strong>
+          <span>Personal story video builds deep trust. Students love real, honest creator stories.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>"B.Com 1st Year Student ke liye Full Roadmap — Watch This First"</strong>
+          <span>New students search this every July/August. Pin this as channel trailer.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>"Accounts mein 90+ Marks Kaise Laaye — Topper Strategy"</strong>
+          <span>Aspirational title. Every student wants this. Will be shared heavily before exams.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>"Punjab University ka Sach — Kya Sach mein Achha Hai?"</strong>
+          <span>Controversial + honest angle. Gets comments, debate, shares — all good for algorithm.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>"B.Com Last Year Student ko Kya Pata Hona Chahiye — Important"</strong>
+          <span>Urgency + FOMO. Final year students will share this with their whole batch.</span>
+        </div>
+      </li>
+      <li>
+        <div class="idea-check check-box" onclick="toggleIdea(this)"></div>
+        <div class="check-text">
+          <strong>"Sirf 1 Din mein Accounts Revision — Possible Hai? (I Tried It)"</strong>
+          <span>Challenge format always works. Curious, shareable, and high watch time.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- WhatsApp Distribution Tip -->
+  <div class="card" style="background:rgba(37,211,102,0.06);border-color:rgba(37,211,102,0.2);margin-bottom:12px">
+    <div class="card-title" style="color:#25D366">📱 WhatsApp = Your Secret Weapon</div>
+    <p style="font-size:14px;color:#ccc;margin-bottom:10px">In India, education videos don't go viral on YouTube first — they go viral on <strong style="color:#fff">WhatsApp groups</strong> first, then get searched on YouTube. Use this.</p>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;gap:10px;font-size:13px;color:#bbb;align-items:flex-start">
+        <span style="flex-shrink:0">✅</span>
+        <span>Share every video in <strong style="color:#fff">B.Com student WhatsApp groups</strong> with a short message like "Accounts ka full chapter cover kar diya — share karo apne dosto ko 🙏"</span>
+      </div>
+      <div style="display:flex;gap:10px;font-size:13px;color:#bbb;align-items:flex-start">
+        <span style="flex-shrink:0">✅</span>
+        <span>Join <strong style="color:#fff">Punjab University student groups</strong> on Telegram and WhatsApp — post video links when relevant (don't spam)</span>
+      </div>
+      <div style="display:flex;gap:10px;font-size:13px;color:#bbb;align-items:flex-start">
+        <span style="flex-shrink:0">✅</span>
+        <span>Ask 5 real friends to <strong style="color:#fff">watch, like, and comment</strong> in the first 2 hours of posting — early engagement signals make YouTube push the video to more people</span>
+      </div>
+      <div style="display:flex;gap:10px;font-size:13px;color:#bbb;align-items:flex-start">
+        <span style="flex-shrink:0">✅</span>
+        <span>Post result/datesheet videos on <strong style="color:#fff">Instagram Reels</strong> too with the YouTube link in bio — many students find content there first</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p style="font-size:16px;margin-bottom:6px">💪 You've got this!</p>
+  <p>You already have <strong>1,550 subscribers</strong> and <strong>674 videos</strong> worth of experience.<br>Now it's just about pointing that energy in the right direction.<br><br>
+  <strong>Next milestone: 4,000 watch hours → Monetization ON 🎉</strong></p>
+</div>
+
+<script>
+  // Save checkbox state to localStorage
+  function toggle(el) {
+    const items = Array.from(document.querySelectorAll('.check-box'));
+    const index = items.indexOf(el);
+    el.classList.toggle('done');
+    const states = items.map(b => b.classList.contains('done'));
+    localStorage.setItem('bcomwale_checklist', JSON.stringify(states));
+  }
+
+  // Restore checkbox state on load
+  window.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('bcomwale_checklist');
+    if (saved) {
+      const states = JSON.parse(saved);
+      const items = document.querySelectorAll('.check-box');
+      items.forEach((box, i) => {
+        if (states[i]) box.classList.add('done');
+      });
+    }
+
+    // Restore idea checkboxes
+    const savedIdeas = localStorage.getItem('bcomwale_ideas');
+    if (savedIdeas) {
+      const states = JSON.parse(savedIdeas);
+      const items = document.querySelectorAll('.idea-check');
+      items.forEach((box, i) => {
+        if (states[i]) box.classList.add('done');
+      });
+    }
+  });
+
+  function toggleIdea(el) {
+    const items = Array.from(document.querySelectorAll('.idea-check'));
+    const index = items.indexOf(el);
+    el.classList.toggle('done');
+    const states = items.map(b => b.classList.contains('done'));
+    localStorage.setItem('bcomwale_ideas', JSON.stringify(states));
+    updateIdeaCount();
+  }
+
+  function updateIdeaCount() {
+    const done = document.querySelectorAll('.idea-check.done').length;
+    const total = document.querySelectorAll('.idea-check').length;
+    const el = document.getElementById('idea-count');
+    if (el) el.textContent = done + ' / ' + total + ' done';
+  }
+</script>
+</body>
+</html>
